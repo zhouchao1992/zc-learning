@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: zc-security
+  #注册中心consul配置
+  cloud:
+    consul:
+      host: 129.28.158.68
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}

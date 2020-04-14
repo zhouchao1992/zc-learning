@@ -1,0 +1,18 @@
+server:
+  port: 8086
+
+#security配置
+spring:
+  security:
+    user:
+      name: admin
+      password: 123456
+  #热加载配置
+  devtools:
+    restart:
+      #开启热加载
+      enabled: true
+      ##设置重启的目录   重启后加载的目录
+      additional-paths: src/main/java
+      #classpath目录下的WEB-INF文件夹内容修改不重启
+      exclude: WEB-INF/**

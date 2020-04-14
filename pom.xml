@@ -11,9 +11,14 @@
     <groupId>com.zc</groupId>
     <artifactId>learning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>learning</name>
     <description>Demo project for Spring Boot</description>
 
+    <modules>
+        <module>zc-common</module>
+        <module>zc-security</module>
+    </modules>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -60,17 +65,27 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
+            <dependency>
+                <groupId>com.zc</groupId>
+                <artifactId>common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
         <plugins>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>-->
+            <!--打包时直接跳过测试-->
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
